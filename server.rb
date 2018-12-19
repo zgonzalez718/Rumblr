@@ -44,3 +44,7 @@ user_instance = User.create(
     )
     puts user_instance 
 end
+
+get '/postPage' do
+  erb :postPage
+end
