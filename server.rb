@@ -25,3 +25,11 @@ enable :sessions
 get '/' do
   erb :login
 end
+
+get '/homepage' do
+  erb :homepage
+end
+
+get '/signUp' do
+  erb :signUp
+end

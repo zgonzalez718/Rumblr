@@ -3,7 +3,8 @@ require 'sqlite3'
 require 'active_record'
 
 #require model classes
-# require './models/cake.rb'
+require './models/user.rb'
+require './models/post.rb'
 
 # Use `binding.pry` anywhere in this script for easy debugging
 require 'pry'
