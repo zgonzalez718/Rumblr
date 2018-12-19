@@ -6,7 +6,8 @@ require 'sqlite3'
 require 'active_record'
 
 #require model classes
-# require './models/cake.rb'
+require './models/user.rb'
+require './models/post.rb'
 
 # Use `binding.pry` anywhere in this script for easy debugging
 require 'pry'
@@ -32,4 +33,14 @@ end
 
 get '/signUp' do
   erb :signUp
+end
+
+post '/signUp' do
+user_instance = User.create(
+      f_name: params["f_name"],
+      l_name: params["l_name"],
+      email: params["email"],
+      password: params["password"]
+    )
+    puts user_instance 
 end

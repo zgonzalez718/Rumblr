@@ -21,4 +21,3 @@ ActiveRecord::Base.establish_connection(
 
 
 binding.pry
-
