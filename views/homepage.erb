@@ -15,14 +15,24 @@
   
   <div class="topnav-right">
     <a href="/postPage">+</a>
-    <a href="#about">Settings</a>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Settings
+       <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content">
+      <a href="/login">Log Out</a>
+      <a href="/profileInfo">Profile Info</a>
+      <a href="#">Cancel Account</a>
+    </div>
+  </div> 
   </div>
     </div>  
     <br>
  
   <div id="contentbox">
   <h3>something should show up hurrr </h3>
-    <%= Post.all%>
+    <%= Post.all.content%>
   </div>  
     
  

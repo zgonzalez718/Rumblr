@@ -59,6 +59,10 @@ get '/signUp' do
   erb :signUp
 end
 
+get '/profileInfo' do
+  erb :profileInfo
+end
+
 post '/signUp' do
 user_instance = User.create(
       f_name: params["f_name"],
