@@ -32,7 +32,13 @@
  
   <div id="contentbox">
   <h3>something should show up hurrr </h3>
-    <%= Post.all.content%>
+     <% for items in Post.all.reverse do%>
+      <%= items.title %> 
+      <br>
+      <%= items.content %>
+      <br>
+      <br>
+      <% end %>
   </div>  
     
  
