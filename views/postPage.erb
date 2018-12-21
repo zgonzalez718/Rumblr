@@ -6,25 +6,29 @@
   <title>Rumblr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
 </head>
 <body>
     <div class="topnav">
-  <a href="#home">RUMBLR</a>
-  
-  
-  <div class="topnav-right">
-    <a href="/postPage">+</a>
-    <a href="#about">Settings</a>
-  </div>
+      <a href="/homepage">RUMBLR</a>
+      <div class="topnav-right">
+        <a href="/postPage">+</a>
+        <a href="#about">Settings</a>
+      </div>
     </div>  
     <br>
-    <textarea rows="40" cols="90">
-    yeehawwww
-    </textarea>
- 
+<br>
+<br>
+<br>
+<form action="/postPage" method="POST" id="post">
+  Title: <input type="text" name="title" class="titleBox">
+  <br>
+  Post:  <input type="text" name="content" class="postBox">
+  <br>
+  <input type="submit" id="postClick">
+</form>
 
-<br>
-<br>
+</form>
 <br>
 
 

@@ -24,8 +24,32 @@ register Sinatra::Reloader
 enable :sessions
 
 get '/' do
-  erb :login
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    redirect '/homepage'
+  else 
+    erb :nope
+  end
 end
+
+get '/login' do 
+  erb :login 
+end
+
+post '/user/homepage' do
+  user = User.find_by(email: params["email"], password: params["password"])
+  puts ">>>>>>>>>>>>"
+  puts user.inspect
+  puts params
+  puts ">>>>>>>>>>>>"
+  if user
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    erb :nope
+  end
+end
+
 
 get '/homepage' do
   erb :homepage
@@ -48,3 +72,11 @@ end
 get '/postPage' do
   erb :postPage
 end
+
+post '/postPage' do
+  post_instance = Post.create(
+        title: params["title"],
+        content: params["content"]
+      )
+      puts post_instance 
+  end
