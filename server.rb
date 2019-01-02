@@ -63,6 +63,10 @@ get '/profileInfo' do
   erb :profileInfo
 end
 
+get '/cancelAcct' do 
+  erb :cancelAcct 
+end
+
 post '/signUp' do
 user_instance = User.create(
       f_name: params["f_name"],
@@ -71,6 +75,7 @@ user_instance = User.create(
       password: params["password"]
     )
     puts user_instance 
+    redirect '/homepage'
 end
 
 get '/postPage' do
@@ -83,4 +88,9 @@ post '/postPage' do
         content: params["content"]
       )
       puts post_instance 
+  end
+
+  get '/user/delete' do
+    User.find(session[:user_id]).destroy
+    redirect '/login'
   end
