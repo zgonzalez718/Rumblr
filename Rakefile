@@ -29,7 +29,7 @@ DatabaseTasks.root = root
 task :environment do
     ActiveRecord::Base.configurations =
   DatabaseTasks.database_configuration
-    + ActiveRecord::Base.establish_connection ENV['DATABASE_URL'] ||
+     ActiveRecord::Base.establish_connection ENV['DATABASE_URL'] ||
   DatabaseTasks.env.to_sym
 end
 
