@@ -32,10 +32,10 @@
 
     <div id="contentbox">
         <center>
-        <p> first name:  </p>
-        <p> last name: </p>
-        <p> email: </p>
-        <p> password: </p>
+        <p> first name: <%= User.find(session[:user_id]).f_name %> </p>
+        <p> last name: <%= User.find(session[:user_id]).l_name %> </p>
+        <p> email: <%= User.find(session[:user_id]).email%> </p>
+        <p> password: <%= User.find(session[:user_id]).password %> </p>
         </center>
     </div>
     

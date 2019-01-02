@@ -85,9 +85,11 @@ end
 post '/postPage' do
   post_instance = Post.create(
         title: params["title"],
-        content: params["content"]
+        content: params["content"],
+        user_id: (session[:user_id])
       )
       puts post_instance 
+    redirect '/homepage'
   end
 
   get '/user/delete' do
