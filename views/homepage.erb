@@ -31,14 +31,15 @@
     <br>
  
   <div id="contentbox">
-  <h3>something should show up hurrr </h3>
      <% for items in Post.all.reverse do%>
-      <%= items.title %> 
+      <h3> <%= items.title %> </h3>
       <br>
       <%= items.content %>
       <br>
       <br>
-      <h5> post by: </h5>
+        <h5> 
+          post by: <%= items.user.f_name %> 
+        </h5>
       <center> <img src="line.png" alt="devider" width="500px" height="50px"> </center>
       <% end %>
   </div>  
