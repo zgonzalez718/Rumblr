@@ -2,7 +2,6 @@ require 'sinatra'
 require "sinatra/reloader"
 
 # Run this script with `bundle exec ruby app.rb`
-require 'sqlite3'
 require 'active_record'
 
 #require model classes
@@ -19,7 +18,7 @@ if ENV['DATABASE_URL']
   require 'pg'
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 else
-  reqire 'sqlite3'
+  require 'sqlite3'
   ActiveRecord::Base.establish_connection(
   adapter: 'sqlite3',
     database: 'db/development.db'
