@@ -32,13 +32,13 @@ get '/' do
   if session[:user_id]
     @user = User.find(session[:user_id])
     redirect '/homepage'
-  else 
+  else
     erb :nope
-  end
+    end
 end
 
-get '/login' do 
-  erb :login 
+get '/login' do
+  erb :login
 end
 
 post '/user/homepage' do
@@ -68,8 +68,8 @@ get '/profileInfo' do
   erb :profileInfo
 end
 
-get '/cancelAcct' do 
-  erb :cancelAcct 
+get '/cancelAcct' do
+  erb :cancelAcct
 end
 
 post '/signUp' do
@@ -79,7 +79,7 @@ user_instance = User.create(
       email: params["email"],
       password: params["password"]
     )
-    puts user_instance 
+    puts user_instance
     redirect '/homepage'
 end
 
@@ -93,7 +93,7 @@ post '/postPage' do
         content: params["content"],
         user_id: (session[:user_id])
       )
-      puts post_instance 
+      puts post_instance
     redirect '/homepage'
   end
 

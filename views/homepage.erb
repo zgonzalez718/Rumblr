@@ -11,11 +11,11 @@
 <body>
     <div class="topnav">
   <a href="/homepage">RUMBLR</a>
-  
-  
+
+
   <div class="topnav-right">
     <a href="/postPage">+</a>
-    
+
     <div class="dropdown">
       <button class="dropbtn">Settings
        <i class="fa fa-caret-down"></i>
@@ -25,11 +25,11 @@
       <a href="/profileInfo">Profile Info</a>
       <a href="/cancelAcct">Cancel Account</a>
     </div>
-  </div> 
   </div>
-    </div>  
+  </div>
+    </div>
     <br>
- 
+
   <div id="contentbox">
      <% for items in Post.all.reverse do%>
       <h3> <%= items.title %> </h3>
@@ -37,14 +37,14 @@
       <%= items.content %>
       <br>
       <br>
-        <h5> 
-          post by: <%= items.user.f_name %> 
+        <h5>
+          post by: <%= items.user %>
         </h5>
       <center> <img src="line.png" alt="devider" width="500px" height="50px"> </center>
       <% end %>
-  </div>  
-    
- 
+  </div>
+
+
 
 
 
